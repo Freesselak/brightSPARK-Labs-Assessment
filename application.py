@@ -12,10 +12,10 @@
 
 import pandas as pd
 
-df = pd.read_csv("dataset.csv")
-print(df)
+dataFrame = pd.read_csv("dataset.csv")
+print(dataFrame)
 
 print()
-test = df.sort_values(by=["division"])
+sortedData = dataFrame.sort_values(["division", "points"], ascending=(True, False))
 
-print(test)
+print(sortedData)
