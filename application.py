@@ -1,28 +1,18 @@
-#1 Pull all data from dataset.xlsx
-#2 Sort data by 'division' and 'points'
-#3 Select top 3 results and output them to console
-#       output example:
-#       records:
-#       - name: <firstname> <lastname>
-#         details: In division <division> from <date> performing <summary>
-#       - name: <firstname> <lastname>
-#         details: In division <division> from <date> performing <summary>
-#       - name: <firstname> <lastname>
-#         details: In division <division> from <date> performing <summary>
-
 import pandas as pd
 
+#Importing the dataset without the header row
 dataFrame = pd.read_csv("dataset.csv", header=None)
-#print(dataFrame)
 
-#print()
+#Sorting the data from the csv file by the 'division' and 'points' columns
+#Ascending variable to sort them in the correct order
 sortedData = dataFrame.sort_values([3, 4], ascending=(True, False))
 
-#print(sortedData)
-
+#Setting variables for the for loop to print desired results
 i = 0
 numberOfResults = 3
 
+#Prints the results to the console
+#Prints the results selected from the sorted data, in the indexes that correspond to the desired output
 print("records:")
 while i < numberOfResults:
     print("- name: " + sortedData[0].values[i] + " " + sortedData[1].values[i])
