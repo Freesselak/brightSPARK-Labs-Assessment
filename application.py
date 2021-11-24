@@ -12,10 +12,19 @@
 
 import pandas as pd
 
-dataFrame = pd.read_csv("dataset.csv")
-print(dataFrame)
+dataFrame = pd.read_csv("dataset.csv", header=None)
+#print(dataFrame)
 
-print()
-sortedData = dataFrame.sort_values(["division", "points"], ascending=(True, False))
+#print()
+sortedData = dataFrame.sort_values([3, 4], ascending=(True, False))
 
-print(sortedData)
+#print(sortedData)
+
+i = 0
+numberOfResults = 3
+
+print("records:")
+while i < numberOfResults:
+    print("- name: " + sortedData[0].values[i] + " " + sortedData[1].values[i])
+    print("- details: In division " + sortedData[3].values[i] + " from " + sortedData[2].values[i] + " performing " + sortedData[5].values[i])
+    i += 1
